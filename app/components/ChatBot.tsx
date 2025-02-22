@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import { FaPaperPlane, FaComments } from 'react-icons/fa';
+import { FaPaperPlane, FaComments, FaTimes } from 'react-icons/fa';
 
 interface Message {
   content: string;
@@ -9,6 +9,7 @@ interface Message {
 }
 
 export default function ChatBot() {
+  const [isOpen, setIsOpen] = useState(true);
   const [messages, setMessages] = useState<Message[]>([
     {
       content: "Hello! I'm SNEP's virtual assistant. How can I help you today?",
@@ -84,56 +85,78 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 w-[calc(100%-2rem)] md:w-96 bg-white rounded-lg shadow-xl z-40">
-      <div className="bg-[#003366] text-white p-4 rounded-t-lg flex justify-between items-center">
+    <div className="relative w-full md:w-96 bg-white shadow-xl rounded-lg">
+      {/* Chat Header with X button */}
+      <div className="bg-[#003366] text-white p-4 flex justify-between items-center rounded-t-lg">
         <h3 className="font-semibold">SNEP Chat Assistant</h3>
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="hover:bg-[#004080] p-1 rounded transition-colors"
+        >
+          <FaTimes size={16} />
+        </button>
       </div>
 
-      <div className="h-[60vh] md:h-96 overflow-y-auto p-4 space-y-4">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-          >
+      {/* Collapsible Chat Content */}
+      <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
+        isOpen ? 'max-h-[600px]' : 'max-h-0'
+      }`}>
+        <div className="h-[400px] overflow-y-auto p-4 space-y-4">
+          {messages.map((message, index) => (
             <div
-              className={`max-w-[85%] rounded-lg p-3 ${
-                message.sender === 'user'
-                  ? 'bg-[#003366] text-white'
-                  : 'bg-gray-200 text-gray-800'
-              }`}
+              key={index}
+              className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
-              {message.content}
+              <div
+                className={`max-w-[85%] rounded-lg p-3 ${
+                  message.sender === 'user'
+                    ? 'bg-[#003366] text-white'
+                    : 'bg-gray-200 text-gray-800'
+                }`}
+              >
+                {message.content}
+              </div>
             </div>
-          </div>
-        ))}
-        {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-gray-200 text-gray-800 rounded-lg p-3">
-              Typing...
+          ))}
+          {isLoading && (
+            <div className="flex justify-start">
+              <div className="bg-gray-200 text-gray-800 rounded-lg p-3">
+                Typing...
+              </div>
             </div>
+          )}
+          <div ref={messagesEndRef} />
+        </div>
+
+        <form onSubmit={handleSubmit} className="p-4 border-t bg-white rounded-b-lg">
+          <div className="flex space-x-2">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your message..."
+              className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003366] bg-white text-gray-900 placeholder-gray-500"
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="bg-[#003366] text-white p-2 rounded-lg hover:bg-[#004080] transition-colors disabled:opacity-50"
+            >
+              <FaPaperPlane />
+            </button>
           </div>
-        )}
-        <div ref={messagesEndRef} />
+        </form>
       </div>
 
-      <form onSubmit={handleSubmit} className="p-4 border-t">
-        <div className="flex space-x-2">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message..."
-            className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003366] bg-white text-gray-900 placeholder-gray-500"
-          />
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="bg-[#003366] text-white p-2 rounded-lg hover:bg-[#004080] transition-colors disabled:opacity-50"
-          >
-            <FaPaperPlane />
-          </button>
-        </div>
-      </form>
+      {/* Show expand button when collapsed */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="absolute -bottom-12 right-0 bg-[#003366] text-white p-2 rounded-lg hover:bg-[#004080] transition-colors"
+        >
+          <FaComments size={20} />
+        </button>
+      )}
     </div>
   );
 } 
