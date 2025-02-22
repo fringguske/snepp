@@ -20,7 +20,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container h-[30vh] md:h-[calc(100vh-144px)]">
       <Slider {...settings}>
         <div>
           <Image 
