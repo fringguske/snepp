@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-blue: #003366;
+  --secondary-blue: #0056b3;
+  --accent-gold: #FFD700;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add these styles to your existing globals.css */
+@layer components {
+  .nav-link {
+    @apply text-[#003366] hover:text-[#0056b3] transition-colors duration-200;
+  }
+  
+  .action-button {
+    @apply bg-[#003366] text-white px-8 py-2 hover:bg-[#004080] transition-colors;
+  }
+}
+
+/* Update these slider styles in your globals.css */
+.slider-container {
+  width: 100%;
+  height: calc(100vh - 144px); /* Subtracting header height */
+  overflow: hidden;
+}
+
+.slick-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.slick-slide > div {
+  height: 100%;
+}
+
+.slider-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slick-dots {
+  bottom: 25px;
+  z-index: 10;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+/* Add these styles to your existing globals.css */
+.card-hover {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+.section-title {
+  @apply text-5xl text-[#003366] text-center mb-16 font-serif;
+}
+
+.card-title {
+  @apply text-2xl text-[#003366] font-semibold mb-3;
+}
+
+.card-text {
+  @apply text-gray-700 leading-relaxed;
+}
+
+/* Update the mutual bank section styling */
+.mutual-bank-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.mutual-bank-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 51, 102, 0.03) 0%, rgba(0, 86, 179, 0.03) 100%);
+  z-index: 1;
+}
+
+.mutual-bank-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 51, 102, 0.1);
+  border-color: rgba(0, 51, 102, 0.2);
+}
+
+/* Add or update these styles in your globals.css */
+.icon-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(0, 51, 102, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Add these styles to your existing globals.css */
+.personal-credit-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-credit-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 51, 102, 0.03) 0%, rgba(0, 86, 179, 0.03) 100%);
+  z-index: 1;
+}
+
+.personal-credit-content {
+  position: relative;
+  z-index: 2;
+}
+
+.read-more-button {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.read-more-button:hover {
+  background-color: var(--secondary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
+}
+
+/* Update the business credit section styles */
+.business-credit-section {
+  background-color: #4A90E2; /* Much lighter, sky blue color */
+  position: relative;
+  overflow: hidden;
+}
+
+.business-credit-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.12) 100%);
+  z-index: 1;
+}
+
+.business-credit-content {
+  position: relative;
+  z-index: 2;
+}
+
+.business-credit-section .read-more-button {
+  background-color: white;
+  color: #4A90E2;
+  border: 2px solid transparent;
+}
+
+.business-credit-section .read-more-button:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+/* Update the transactional banking section styles */
+.transactional-banking-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.transactional-banking-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 51, 102, 0.03) 0%, rgba(0, 86, 179, 0.03) 100%);
+  z-index: 1;
+}
+
+.transactional-banking-section .read-more-button {
+  background-color: var(--primary-blue);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.transactional-banking-section .read-more-button:hover {
+  background-color: var(--secondary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
+}
+
+/* Add these styles for the save wisely section */
+.save-wisely-section {
+  background-color: #4A90E2; /* Same light blue as business credit */
+  position: relative;
+  overflow: hidden;
+}
+
+.save-wisely-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.12) 100%);
+  z-index: 1;
+}
+
+.save-wisely-content {
+  position: relative;
+  z-index: 2;
+}
+
+.save-wisely-section .read-more-button {
+  background-color: white;
+  color: #4A90E2;
+  border: 2px solid transparent;
+}
+
+.save-wisely-section .read-more-button:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.why-choose-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 51, 102, 0.03) 0%, rgba(0, 86, 179, 0.03) 100%);
+  z-index: 1;
+}
+
+.why-choose-content {
+  position: relative;
+  z-index: 2;
+}
