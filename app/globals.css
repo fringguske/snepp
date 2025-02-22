@@ -37,7 +37,6 @@ body {
 /* Update these slider styles in your globals.css */
 .slider-container {
   width: 100%;
-  height: calc(100vh - 144px); /* Subtracting header height */
   overflow: hidden;
 }
 
@@ -58,18 +57,18 @@ body {
 }
 
 .slick-dots {
-  bottom: 25px;
+  bottom: 10px !important; /* Adjusted for mobile */
   z-index: 10;
 }
 
 .slick-dots li button:before {
-  color: white;
-  font-size: 10px;
+  color: white !important;
+  font-size: 8px !important; /* Smaller dots for mobile */
   opacity: 0.8;
 }
 
 .slick-dots li.slick-active button:before {
-  color: white;
+  color: white !important;
   opacity: 1;
 }
 
