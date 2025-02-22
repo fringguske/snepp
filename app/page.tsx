@@ -12,13 +12,13 @@ export default function Home() {
         <ImageSlider />
         
         {/* What is a Mutual Bank Section */}
-        <section className="mutual-bank-section py-20">
+        <section className="mutual-bank-section py-8 md:py-20">
           <div className="max-w-7xl mx-auto px-4">
-            <h1 className="text-3xl md:text-5xl text-[#003366] text-center mb-16 font-serif relative z-2">
+            <h1 className="text-3xl md:text-5xl text-[#003366] text-center mb-8 md:mb-16 font-serif relative z-2">
               What is Snep Microfinance Bank?
             </h1>
             
-            <div className="mutual-bank-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="mutual-bank-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {/* Card 1 */}
               <div className="info-card flex flex-col items-center text-center">
                 <div className="icon-container">
