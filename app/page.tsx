@@ -14,7 +14,7 @@ export default function Home() {
         {/* What is a Mutual Bank Section */}
         <section className="mutual-bank-section py-20">
           <div className="max-w-7xl mx-auto px-4">
-            <h1 className="text-5xl text-[#003366] text-center mb-16 font-serif relative z-2">
+            <h1 className="text-3xl md:text-5xl text-[#003366] text-center mb-16 font-serif relative z-2">
               What is Snep Microfinance Bank?
             </h1>
             
@@ -93,12 +93,12 @@ export default function Home() {
         <section className="personal-credit-section py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="personal-credit-content">
-              <h2 className="text-[#003366] text-6xl font-bold text-center mb-12">
+              <h2 className="text-[#003366] text-4xl md:text-6xl font-bold text-center mb-8 md:mb-12">
                 PERSONAL CREDIT
               </h2>
               
               <div className="text-center max-w-4xl mx-auto">
-                <p className="text-[#003366] text-2xl leading-relaxed mb-10">
+                <p className="text-[#003366] text-lg md:text-2xl leading-relaxed mb-6 md:mb-10">
                   If you are looking for a fast, easy, flexible short term unsecured loan up to Ksh 1000000, then the SNEP Short Term Unsecured Loan is ideal for you.
                 </p>
                 
@@ -113,12 +113,12 @@ export default function Home() {
         <section className="business-credit-section py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="business-credit-content">
-              <h2 className="text-white text-6xl font-bold text-center mb-12">
+              <h2 className="text-white text-4xl md:text-6xl font-bold text-center mb-8 md:mb-12">
                 BUSINESS CREDIT
               </h2>
               
               <div className="text-center max-w-4xl mx-auto">
-                <p className="text-white text-2xl leading-relaxed mb-10">
+                <p className="text-white text-lg md:text-2xl leading-relaxed mb-6 md:mb-10">
                   Contact us today for a tailored business credit.
                 </p>
                 
@@ -133,12 +133,12 @@ export default function Home() {
         <section className="transactional-banking-section py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="transactional-banking-content">
-              <h2 className="text-[#003366] text-6xl font-bold text-center mb-12">
+              <h2 className="text-[#003366] text-4xl md:text-6xl font-bold text-center mb-8 md:mb-12">
                 TRANSACTIONAL BANKING
               </h2>
               
               <div className="text-center max-w-4xl mx-auto">
-                <p className="text-[#003366] text-2xl leading-relaxed mb-10">
+                <p className="text-[#003366] text-lg md:text-2xl leading-relaxed mb-6 md:mb-10">
                   Be in control of your finances with a SNEP banking account.
                 </p>
                 
@@ -153,12 +153,12 @@ export default function Home() {
         <section className="save-wisely-section py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="save-wisely-content">
-              <h2 className="text-white text-6xl font-bold text-center mb-12">
+              <h2 className="text-white text-4xl md:text-6xl font-bold text-center mb-8 md:mb-12">
                 SAVE WISELY
               </h2>
               
               <div className="text-center max-w-4xl mx-auto">
-                <p className="text-white text-2xl leading-relaxed mb-10">
+                <p className="text-white text-lg md:text-2xl leading-relaxed mb-6 md:mb-10">
                   Get the best rate on your capital and earn up to 9.00% per annum.
                   The ideal savings and investment account for investors and pensioners.*
                 </p>
